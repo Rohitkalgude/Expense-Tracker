@@ -63,9 +63,9 @@ function updateSummary() {
   const expence = Tranctions.filter(tranction => tranction.amount < 0).reduce((acc, tranction) => acc + tranction.amount, 0)
 
 
-  BalanceEl.textContent = formatCurrency[balance];
-  Income.textContent = formatCurrency[income];
-  Expence.textContent = formatCurrency[expence];
+  BalanceEl.textContent = formatCurrency(balance);
+  Income.textContent = formatCurrency(income);
+  Expence.textContent = formatCurrency(expence);
 }
 
 function deleteTransaction(id) {
@@ -77,5 +77,8 @@ function deleteTransaction(id) {
 
 
 function formatCurrency(number){
-
+    return new Intl.NumberFormat("en-us", {
+        style: "currency",
+        currency: "USD",
+    }).format(number);
 }
