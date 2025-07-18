@@ -10,6 +10,7 @@ let Tranctions = JSON.parse(localStorage.getItem("Tranctions")) || [];
 
 Tranctionform.addEventListener("submit", addTranctions);
 
+//add all value
 function addTranctions(e) {
   e.preventDefault();
 
@@ -31,6 +32,7 @@ function addTranctions(e) {
   Tranctionform.reset();
 }
 
+//upadte item
 function updateTranctionsList() {
   Tranctionlist.innerHTML = "";
 
@@ -42,10 +44,11 @@ function updateTranctionsList() {
   });
 }
 
+//display description and amount print
 function CreateTranctions(tranction) {
   const li = document.createElement("li");
   li.classList.add("tranction");
-  li.classList.add(tranction.amount > 0 ? "Income" : "Expence");
+  li.classList.add(tranction.amount > 0 ? "income" : "expence");
   li.innerHTML = `
       <span>${tranction.description}</span>
     <span>
@@ -58,10 +61,18 @@ function CreateTranctions(tranction) {
 }
 
 function updateSummary() {
-  const balance = Tranctions.reduce((acc, tranction) => acc + tranction.amount, 0);
-  const income = Tranctions.filter(tranction => tranction.amount > 0).reduce((acc, tranction) => acc + tranction.amount, 0);
-  const expence = Tranctions.filter(tranction => tranction.amount < 0).reduce((acc, tranction) => acc + tranction.amount, 0)
-
+  const balance = Tranctions.reduce(
+    (acc, tranction) => acc + tranction.amount,
+    0
+  );
+  const income = Tranctions.filter((tranction) => tranction.amount > 0).reduce(
+    (acc, tranction) => acc + tranction.amount,
+    0
+  );
+  const expence = Tranctions.filter((tranction) => tranction.amount < 0).reduce(
+    (acc, tranction) => acc + tranction.amount,
+    0
+  );
 
   BalanceEl.textContent = formatCurrency(balance);
   Income.textContent = formatCurrency(income);
@@ -75,10 +86,9 @@ function deleteTransaction(id) {
   updateSummary();
 }
 
-
-function formatCurrency(number){
-    return new Intl.NumberFormat("en-us", {
-        style: "currency",
-        currency: "USD",
-    }).format(number);
+function formatCurrency(number) {
+  return new Intl.NumberFormat("en-us", {
+    style: "currency",
+    currency: "USD",
+  }).format(number);
 }

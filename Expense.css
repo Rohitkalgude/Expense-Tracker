@@ -172,15 +172,15 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.tranction .income {
+.tranction.income {
   border-right-color: #059669;
 }
 
-.tranction .expence {
+.tranction.expence {
   border-right-color: #dc2626;
 }
 
-.tranction .delete-btn {
+.delete-btn {
   background: none;
   border: none;
   color: #dc2626;
