@@ -69,3 +69,135 @@ h2 {
   gap: 24px;
 }
 
+.income,
+.expence {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2 ease;
+}
+
+.income:hover,
+.expence:hover {
+  transform: translateY(-2px);
+}
+
+.income h3 {
+  color: #059669;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.expence h3 {
+  color: #dc2626;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.income p,
+.expence p {
+  margin-top: 8px;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.income p {
+  color: #059669;
+}
+
+.expence p {
+  color: #dc2626;
+}
+
+.tranction-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#tranction-list {
+  list-style: none;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+  flex-grow: 1;
+}
+
+#tranction-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#tranction-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+#tranction-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 4px;
+}
+
+#tranction-list::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tranction {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 1.2rem;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  border-right: 5px solid;
+  animation: slideIn 0.3s ease;
+}
+
+.tranction:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tranction .income {
+  border-right-color: #059669;
+}
+
+.tranction .expence {
+  border-right-color: #dc2626;
+}
+
+.tranction .delete-btn {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: 12px;
+}
+
+.tranction .delete-btn:hover {
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+.form-container{
+    
+}
