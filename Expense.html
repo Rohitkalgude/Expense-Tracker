@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./Expense.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expense Tracker</h1>
+
+      <div class="balance-container">
+        <h2>Your Balance</h2>
+        <h1 id="balance">$0.00</h1>
+
+        <div class="summery">
+          <div class="income">
+            <h3>Income</h3>
+            <p id="income-amount">$0.00</p>
+          </div>
+          <div class="expence">
+            <h3>Expence</h3>
+            <p id="expence-amount">$0.00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="tranction">
+          <h2>Transactions</h2>
+          <ul id="tranction-list"></ul>
+        </div>
+
+        <div class="form-container">
+          <h2>Add Transaction</h2>
+          <form id="tranction-form">
+            <div class="form-group">
+              <label for="">Description</label>
+              <input
+                type="text"
+                name="description"
+                id="Enter dedcription...."
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="">Amount</label>
+              <input
+                type="number"
+                name="amount"
+                id="Enter amount...."
+                required
+              />
+              <small>Use nagetive (-) for expence</small>
+            </div>
+
+            <button type="submit">Add Transaction</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Expense.js"></script>
+  </body>
+</html>
